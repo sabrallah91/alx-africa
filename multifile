@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "Entrez le nombre de fichiers à créer : "
+read n
+
+echo "Entrez le nom des fichiers : "
+read -a files
+
+for ((i=0;i<n;i++))
+do
+  touch ${files[i]}
+  chmod +x ${files[i]}
+done

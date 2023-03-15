@@ -1,0 +1,16 @@
+#!/bin/bash
+# Prompt the user to enter a commit message
+read -p "Enter a commit message: " message
+# Check if the message is empty
+if [ -z "$message" ]
+then
+  echo "Commit message cannot be empty."
+else
+  # Add all changes to the staging area
+  git add .
+  # Commit changes with the entered message
+  git commit -m "$message"
+  # Push changes to remote repository
+  git push
+  echo "Changes committed and pushed successfully."
+fi
